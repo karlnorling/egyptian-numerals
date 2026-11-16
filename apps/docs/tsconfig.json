@@ -1,0 +1,8 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "paths": {
+      "@egyptian-numerals/core": ["../../packages/@egyptian-numerals/core/src/index.ts"]
+    }
+  }
+}
