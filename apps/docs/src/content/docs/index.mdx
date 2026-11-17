@@ -1,0 +1,55 @@
+---
+title: Egyptian Numerals
+description: Render any number as Egyptian hieroglyphic numerals in SVG, PNG, JPEG or WebP, from code or the command line.
+template: splash
+hero:
+  tagline: >-
+    Draw any number the way it was carved in ancient Egypt: strokes, hobbles, coils of rope, lotuses, fingers, tadpoles and the god Heh, with fractions as a scribe wrote them. SVG with zero dependencies, plus PNG, JPEG and WebP.
+  actions:
+    - text: Open the playground
+      link: /egyptian-numerals/playground/
+      icon: pencil
+    - text: Get started
+      link: /egyptian-numerals/getting-started/
+      icon: right-arrow
+      variant: secondary
+    - text: GitHub
+      link: https://github.com/karlnorling/egyptian-numerals
+      icon: github
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import Glyph from '../../components/Glyph.astro';
+import ColourExamples from '../../components/ColourExamples.astro';
+
+<div class="examples">
+  <Glyph value={1993} caption="1993" />
+  <Glyph value={4622} caption="4622" />
+  <Glyph value={'12.75'} caption="12.75" />
+  <Glyph value={-42} caption="-42" />
+</div>
+
+<ColourExamples />
+
+<CardGrid>
+  <Card title="Try any number" icon="pencil">
+    The [playground](/egyptian-numerals/playground/) draws whatever you type, breaks it into base-10
+    digits, and lets you download SVG, PNG, JPEG or WebP.
+  </Card>
+  <Card title="Egyptian fractions" icon="add-document">
+    Fractions become unit fractions under the mouth sign, and 2/3, as scribes wrote them: 0.75 is
+    1/2 + 1/4. [See how](/egyptian-numerals/how-it-works/).
+  </Card>
+  <Card title="Zero dependencies" icon="seti:svg">
+    `@egyptian-numerals/core` turns a number into an SVG string in any JavaScript runtime.
+  </Card>
+  <Card title="Images and CLI" icon="seti:image">
+    `@egyptian-numerals/raster` renders PNG, JPEG and WebP with sharp, and `@egyptian-numerals/cli`
+    does it from the terminal.
+  </Card>
+</CardGrid>
+
+<style>{`
+  .examples { display: flex; flex-wrap: wrap; justify-content: center; align-items: end; gap: 2rem; margin-block: 1rem 2.5rem; }
+`}</style>
